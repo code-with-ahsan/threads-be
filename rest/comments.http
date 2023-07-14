@@ -1,0 +1,16 @@
+GET http://localhost:3000/comments HTTP/1.1
+
+###
+
+GET http://localhost:3000/comments?parentId=64ade80d84c7764ae38bc176 HTTP/1.1
+
+###
+
+POST http://localhost:3000/comments HTTP/1.1
+content-type: application/json
+
+{
+  "text": "i am a nested comment inside the third comment",
+  "userId": "64ade3b83862ed27011a092e",
+  "parentId": "64ade80d84c7764ae38bc176"
+}
