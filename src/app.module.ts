@@ -9,11 +9,9 @@ import { MongooseModule } from '@nestjs/mongoose';
   imports: [
     UsersModule,
     CommentsModule,
-    MongooseModule.forRoot(
-      'mongodb+srv://threads-user:HTrrK1Sqfu31VRA8@cluster0.ugcy9.mongodb.net/threads?retryWrites=true&w=majority',
-    ),
+    MongooseModule.forRoot(process.env.MONGO_URL),
   ],
   controllers: [AppController],
   providers: [AppService],
 })
-export class AppModule {}
+export class AppModule { }
